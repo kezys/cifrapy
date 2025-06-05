@@ -17,7 +17,8 @@ with open(r"C:\Users\diogo\Desktop\chaves\chave_publica.pem", "rb") as f:
 public_key = serialization.load_pem_public_key(public_pem_str)
 
 # 4. Mensagem a enviar
-mensagem = "Esta é uma mensagem secreta que vou assinar."
+
+mensagem = input("Digita uma mensagem: ")
 mensagem_bytes = mensagem.encode()
 
 # 5. Assinar mensagem com chave privada
