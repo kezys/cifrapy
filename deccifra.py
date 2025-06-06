@@ -21,10 +21,10 @@ if response.status_code == 200:
         public_key.verify(
             assinatura_bytes,
             mensagem_bytes,
-            padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=padding.PSS.MAX_LENGTH),
+            padding.PKCS1v15(),
             hashes.SHA256()
         )
-
+ 
         mensagem = mensagem_bytes.decode('utf-8')
         print(f"✔ Mensagem ID {autor_pesq} - Assinatura válida!")
         print("Mensagem:", mensagem)
